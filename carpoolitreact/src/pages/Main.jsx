@@ -1,11 +1,36 @@
 import React from "react";
 import SideBar from "../components/Sidebar";
+import Styles from "./Main.module.css";
 
 export default function Main() {
+  const handleBookRide = () => {
+    // Add logic for booking a ride
+    console.log("Booking a ride...");
+  };
+
+  const handleOfferRide = () => {
+    // Add logic for offering a ride
+    console.log("Offering a ride...");
+  };
+
   return (
-    <div>
-      hello
-      <SideBar />
-    </div>
+    <>
+      <div className="sidebar">
+        <SideBar />
+      </div>
+      <div className={Styles.mainContainer}>
+        <h2>What do you want to do today?</h2>
+        <div className={Styles.card}>
+          <div className={Styles.buttonsContainer}>
+            <button className={Styles.rideButton} onClick={handleBookRide}>
+              Book a Ride
+            </button>
+            <button className={Styles.driverButton} onClick={handleOfferRide}>
+              Offer a Ride
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,5 +1,5 @@
 .Sidebar {
-    background-color: #111;
+    background-color: #ffffff;
     color: #fff;
     position: fixed;
     width: 250px;
@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center; /* Center content horizontally */
+    z-index: 10;
   }
     
     .logo {
@@ -39,24 +40,19 @@
     line-height: 50%;
     letter-spacing: -0.22px;
     }
-    .bmenuItem{
+    .menuItem{
       padding: 0px;
       list-style: none;
       width: 100%;
     }
-    .AccessTimeIcon{
-      font-size: 23px;
-      align-items: center;
-      margin-right: 12px;
-   
-    }
+
   
-    .bmenuItemlink {
+    .menuItemlink {
       display: flex;
       flex-direction: row;
       padding: 10px;
       text-decoration: none;
-      color: #FFF;
+      color: black;
       font-family: Poppins;
       font-size: 15px;
       font-style: normal;
@@ -67,14 +63,14 @@
       transition: background-color 0.3s ease, color 0.3s ease;
       position: relative;
       justify-content: center;
-      margin-left: -40px;
+      cursor: pointer;
     }
     
-    .bmenuItemlink.clicked {
+    .menuItemlink.clicked {
       background-color: rgba(79, 79, 79, 1); /* Light gray with low opacity */
     }
     
-    .bmenuItemlink.clicked::before {
+    .menuItemlink.clicked::before {
       content: "";
       position: absolute;
       left: 0;
@@ -96,6 +92,7 @@
     /* Style the Logout text */
     .logoutButton p {
       margin: 0;
+      color: black;
       margin-left: 5px; /* Adjust this value for spacing between icon and text */
     }
     
@@ -104,89 +101,3 @@
       font-size: 24px; /* Adjust this value for icon size */
     }
   
-  
-    .icon{
-      display: none;
-    }
-    .smenuItem{
-      list-style: none !important; 
-  
-    }
-  
-    .smenuContainer {
-      display: none;
-      background-color: #F4CFD5;
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      position: fixed; /* Fixed position to take full width of the viewport */
-      top: 100px; /* Position at the top of the viewport */
-      left: 0; /* Align to the left edge */
-      z-index: 999; /* Ensure it appears above other content */
-    }
-  
-      
-      .smenuItemlink {
-        padding: 10px;
-        text-decoration: none;
-        color: #180000;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        position: relative;
-        justify-content: center;
-    }
-  
-  
-    @media (max-width: 767px) {
-  
-      .sidebar {
-        /* Styles for small screens */
-        background-color: #180000;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        color: #ffffff;
-        position: fixed;
-        width: 100%;
-        height: 100px;
-        box-sizing: border-box;
-      }
-      
-      .logo {
-        display: flex; /* Use flexbox */
-        justify-content: center; /* Center vertically */
-        padding: 30px; /* Add some padding for spacing */
-      }
-      
-      .logo img {
-        height: 2em;
-        width: auto; /* Allow the width to adjust based on the aspect ratio */
-      }
-      
-      .userInfo{
-        font-size: small;
-        display: flex;
-        padding-top: 20px;
-      }
-      .AccessTimeIcon{
-        position: relative;
-        top: 5px; /* Adjust the value as needed */
-        font-size: 18px;
-        margin-right: 8px;
-      }
-      .userInfoLine {
-        margin: 4px 0; /* Adjust the margin as needed */
-      }
-      
-      .bmenuItem{
-        display: none;
-    
-      }
-      .icon{
-        display: block;
-        padding: 2em;
-      }
-      .smenuContainer{
-        display: flex;
-      }
-    }

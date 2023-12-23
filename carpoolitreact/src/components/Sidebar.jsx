@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Styles from "./Sidebar.module.css";
+
 function Sidebar({ username, title, handlelogout }) {
   const [clickedLink1, setClickedLink1] = useState(1); // Track clicked link, default to 0
   const [showMenu, setShowMenu] = useState(false); // Track whether the menu should be displayed
@@ -10,7 +11,6 @@ function Sidebar({ username, title, handlelogout }) {
   //handle sidebar links
   const handleLink1Click = (index) => {
     setClickedLink1(1);
-
     setShowMenu(!showMenu);
   };
 
@@ -30,8 +30,11 @@ function Sidebar({ username, title, handlelogout }) {
           <p className={Styles.userInfoLine}>{username}</p>
           <p className={Styles.userInfoLine}>{title}</p>
         </div>
-        <ul className={Styles.bmenuItem}>
-          <li className={Styles.bmenuItem}>Time slot</li>
+        <ul className={Styles.menuItem}>
+          <li className={Styles.menuItemlink}>History</li>
+          <li className={Styles.menuItemlink}>Edit my account</li>
+          <li className={Styles.menuItemlink}>Support</li>
+          <li className={Styles.menuItemlink}>about</li>
         </ul>
         <div className={Styles.logoutButton} onClick={handlelogout}>
           <p>Logout</p>

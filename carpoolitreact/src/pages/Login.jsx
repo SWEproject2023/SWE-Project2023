@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { createBrowserHistory } from "history";
+import { Link } from "react-router-dom";
 
 const Login = ({ onLogin }) => {
   const LogoPath =
@@ -17,6 +18,7 @@ const Login = ({ onLogin }) => {
     if (isValidCredentials) {
       // Call the onLogin callback to update authentication status
       onLogin();
+      <Link to={"/Main"}></Link>;
     } else {
       setErrorMessage("Invalid credentials");
     }

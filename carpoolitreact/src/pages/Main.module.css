@@ -1,0 +1,55 @@
+.mainContainer{
+    background-color: #32578F;
+    position: fixed;
+    margin-right: 3em;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mainContainer h2{
+    position: relative;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal; 
+    left: 0;
+  }
+  
+  .card {
+    
+    padding: 20px;
+    max-width: 300px;
+  }
+  
+  .buttonsContainer {
+    display: flex;
+    gap: 50px;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  
+  .rideButton,
+  .driverButton {
+    /* Add your button styles here */
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal; 
+    padding: 20px;
+    
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .rideButton:hover,
+  .driverButton:hover {
+    /* Add your button hover styles here */
+    background-color: #0056b3;
+  }
