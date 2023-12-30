@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
-import { createBrowserHistory } from "history";
 import { Link } from "react-router-dom";
+import Logo from "../assets/Logo.jpg";
 
 const Login = ({ onLogin }) => {
   const LogoPath =
@@ -9,7 +9,6 @@ const Login = ({ onLogin }) => {
 
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const history = createBrowserHistory();
 
   const handleLogin = async () => {
     // Check credentials here
@@ -18,7 +17,6 @@ const Login = ({ onLogin }) => {
     if (isValidCredentials) {
       // Call the onLogin callback to update authentication status
       onLogin();
-      <Link to={"/Main"}></Link>;
     } else {
       setErrorMessage("Invalid credentials");
     }
@@ -27,7 +25,7 @@ const Login = ({ onLogin }) => {
   return (
     <div className={styles.body}>
       <div className={styles.Logo}>
-        <img alt="logo" src={LogoPath} />
+        <img alt="logo" src={Logo} />
         <p>CarPoolit</p>
       </div>
       <div className={styles.loginContainer}>

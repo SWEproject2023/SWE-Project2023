@@ -1,10 +1,14 @@
 import React from "react";
 import SideBar from "../components/Sidebar";
 import Styles from "./Main.module.css";
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Main() {
+  const navigate = useNavigate(); // Create a navigate function
   const handleBookRide = () => {
     // Add logic for booking a ride
+    navigate("/Matches");
     console.log("Booking a ride...");
   };
 

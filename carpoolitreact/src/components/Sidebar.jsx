@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Styles from "./Sidebar.module.css";
+import Logo from "../assets/Logo.jpg";
 
 function Sidebar({ username, title, handlelogout }) {
   const [clickedLink1, setClickedLink1] = useState(1); // Track clicked link, default to 0
@@ -23,7 +24,7 @@ function Sidebar({ username, title, handlelogout }) {
     <div>
       <aside className={Styles.Sidebar}>
         <div className={Styles.logo}>
-          <img alt="logo" src={LogoPath}></img>
+          <img alt="logo" src={Logo}></img>
         </div>
         <div className={Styles.userInfo}>
           {/* Display user information */}
