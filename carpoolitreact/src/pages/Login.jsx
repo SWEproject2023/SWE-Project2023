@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
-import Logo from "../assets/Logo.jpg";
+import Logo from "../assets/Logo 1.png";
 
 const Login = ({ onLogin }) => {
   const LogoPath =

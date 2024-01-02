@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Styles from "./Sidebar.module.css";
-import Logo from "../assets/Logo.jpg";
+import Logo from "../assets/Logo 1.png";
 
 function Sidebar({ username, title, handlelogout }) {
   const [clickedLink1, setClickedLink1] = useState(1); // Track clicked link, default to 0

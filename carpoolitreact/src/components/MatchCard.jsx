@@ -4,7 +4,6 @@ const cardStyle = {
   border: "1px solid #ccc",
   borderRadius: "8px",
   padding: "20px",
-
   backgroundColor: "white",
   minWidth: "450px",
 };
