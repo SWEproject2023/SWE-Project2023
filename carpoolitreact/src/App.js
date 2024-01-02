@@ -21,8 +21,13 @@ function App() {
   // Function to handle successful login
   const handleLogin = () => {
     setIsAuthenticated(true);
-    // Use the Navigate component to programmatically navigate to the Main component
-    return <Navigate to="/" />;
+  };
+
+  // Function to handle logout
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    localStorage.clear("isAuthenticated");
+    console.log("loging out");
   };
 
   return (
@@ -30,16 +35,14 @@ function App() {
       {isAuthenticated ? (
         <div>
           <div className="Sidebar">
-            <Sidebar />
+            {/* Pass handleLogout to Sidebar */}
+            <Sidebar handleLogout={handleLogout} />
           </div>
           <div className="App">
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/Matches" element={<Matches />} />
-              <Route
-                path="/driver-details/:id"
-                element={<DriverDetails />}
-              />{" "}
+              <Route path="/driver-details/:id" element={<DriverDetails />} />
             </Routes>
           </div>
         </div>

@@ -42,7 +42,7 @@ const Login = ({ onLogin }) => {
             </div>
           )}
 
-          <button type="button" onClick={handleLogin}>
+          <button className={styles.button} type="button" onClick={handleLogin}>
             {loading ? "Waiting" : "Login"}
           </button>
         </div>

@@ -25,7 +25,6 @@ export default function Main() {
       </div>
       <div className="Logo"></div>
       <div className={Styles.mainContainer}>
-        <img alt="logo" src={Logo}></img>
         <h2>What do you want to do today?</h2>
         <div className={Styles.card}>
           <div className={Styles.buttonsContainer}>
