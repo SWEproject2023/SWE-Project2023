@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useNavigate } from "react";
 import Styles from "./Matches.module.css";
 import MatchCard from "../components/MatchCard";
+import { Link, Navigate } from "react-router-dom";
 
-const exampleDriverData = [
+export const examplePassengerData = [
   {
     id: 1,
     name: "John Doe",
@@ -14,7 +15,7 @@ const exampleDriverData = [
     destination: "456 Oak Ave",
   },
   {
-    id: 1,
+    id: 2,
     name: "ahmed",
     picture: "https://placekitten.com/150/150", // Replace with the actual picture URL
     seatsAvailable: 2,
@@ -24,7 +25,7 @@ const exampleDriverData = [
     destination: "456 Oak Ave",
   },
   {
-    id: 1,
+    id: 3,
     name: "mohamed",
     picture: "https://placekitten.com/150/150", // Replace with the actual picture URL
     seatsAvailable: 1,
@@ -36,38 +37,34 @@ const exampleDriverData = [
   // Add more example driver data as needed
 ];
 
-const Matches = () => {
-  const [currentDriverIndex, setCurrentDriverIndex] = useState(0);
+const OfferARideMatches = () => {
+  const [currentPassengerIndex, setcurrentPassengerIndex] = useState(0);
 
-  const handleAccept = (driver) => {
-    // Handle accepting the ride (e.g., update state, navigate to the next driver, etc.)
-    console.log("Accepted ride with", driver.name);
-    setCurrentDriverIndex(currentDriverIndex + 1);
+  const handleDecline = () => {
+    console.log(
+      "Declined ride with",
+      examplePassengerData[currentPassengerIndex].name
+    );
+    setcurrentPassengerIndex(
+      (currentPassengerIndex + 1) % examplePassengerData.length
+    );
   };
 
-  const handleDecline = (driver) => {
-    // Handle declining the ride (e.g., show the next driver, etc.)
-    console.log("Declined ride with", driver.name);
-    setCurrentDriverIndex(currentDriverIndex + 1);
-  };
-
-  const currentDriver = exampleDriverData[currentDriverIndex];
+  const currentPassenger = examplePassengerData[currentPassengerIndex];
 
   return (
     <div className={Styles.container}>
       <div className={Styles.card}>
-        {currentDriver ? (
-          <MatchCard
-            driver={currentDriver}
-            onAccept={handleAccept}
-            onDecline={handleDecline}
-          />
+        {currentPassenger ? (
+          <>
+            <MatchCard Passenger={currentPassenger} onDecline={handleDecline} />
+          </>
         ) : (
-          <p>No more available drivers.</p>
+          <p>No more available Passengers.</p>
         )}
       </div>
     </div>
   );
 };
 
-export default Matches;
+export default OfferARideMatches;

@@ -7,6 +7,7 @@ import Main from "./pages/Main";
 import Matches from "./pages/Matches";
 import Sidebar from "./components/Sidebar";
 import DriverDetails from "./pages/DriverDetails";
+import OfferARideMatches from "./pages/matchesOfferRide";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
