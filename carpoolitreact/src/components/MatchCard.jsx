@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const cardStyle = {
   border: "1px solid #ccc",
@@ -68,7 +69,15 @@ const MatchCard = ({ driver, onAccept, onDecline }) => {
     pickupLocation,
     destination,
   } = driver;
+  const navigate = useNavigate();
 
+  const handleAccept = () => {
+    console.log("Accepted ride with", driver.name);
+    // Perform any additional acceptance logic here
+
+    // Navigate to the driver details page
+    navigate(`/driver-details/${driver.id}`);
+  };
   return (
     <div style={cardStyle}>
       <h1>We have found you a match</h1>
@@ -139,7 +148,7 @@ const MatchCard = ({ driver, onAccept, onDecline }) => {
         </div>
       </div>
       <div style={buttonContainerStyle}>
-        <button style={acceptButtonStyle} onClick={() => onAccept(driver)}>
+        <button style={acceptButtonStyle} onClick={handleAccept}>
           Accept Ride
         </button>
         <button style={declineButtonStyle} onClick={() => onDecline(driver)}>

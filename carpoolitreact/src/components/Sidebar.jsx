@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Styles from "./Sidebar.module.css";
 import Logo from "../assets/Logo 1.png";
+import { Link } from "react-router-dom";
 
 function Sidebar({ username, title, handlelogout }) {
   const [clickedLink1, setClickedLink1] = useState(1); // Track clicked link, default to 0
@@ -24,7 +25,9 @@ function Sidebar({ username, title, handlelogout }) {
     <div>
       <aside className={Styles.Sidebar}>
         <div className={Styles.logo}>
-          <img alt="logo" src={Logo}></img>
+          <Link to="/">
+            <img alt="logo" src={Logo}></img>
+          </Link>
         </div>
         <div className={Styles.userInfo}>
           {/* Display user information */}

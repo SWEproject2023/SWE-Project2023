@@ -1,19 +1,28 @@
 // App.js
-import React, { useState } from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Link, Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import Main from "./pages/Main";
 import Matches from "./pages/Matches";
 import Sidebar from "./components/Sidebar";
+import DriverDetails from "./pages/DriverDetails";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    localStorage.getItem("isAuthenticated") === "true"
+  );
+
+  useEffect(() => {
+    // Save the authentication status to localStorage
+    localStorage.setItem("isAuthenticated", isAuthenticated);
+  }, [isAuthenticated]);
 
   // Function to handle successful login
   const handleLogin = () => {
     setIsAuthenticated(true);
-    <Main />;
+    // Use the Navigate component to programmatically navigate to the Main component
+    return <Navigate to="/" />;
   };
 
   return (
@@ -27,6 +36,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/Matches" element={<Matches />} />
+              <Route
+                path="/driver-details/:id"
+                element={<DriverDetails />}
+              />{" "}
             </Routes>
           </div>
         </div>
