@@ -13,6 +13,7 @@ export const exampleDriverData = [
     hour: "08:30 AM",
     pickupLocation: "123 Main St",
     destination: "456 Oak Ave",
+    minutesAway: "4 minutes",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const exampleDriverData = [
     hour: "08:30 AM",
     pickupLocation: "123 Main St",
     destination: "456 Oak Ave",
+    minutesAway: "2 minutes",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ export const exampleDriverData = [
     hour: "08:30 AM",
     pickupLocation: "123 Main St",
     destination: "456 Oak Ave",
+    minutesAway: "1 minutes",
   },
   // Add more example driver data as needed
 ];
@@ -41,10 +44,6 @@ const Matches = () => {
   const [currentDriverIndex, setCurrentDriverIndex] = useState(0);
 
   const handleDecline = () => {
-    console.log(
-      "Declined ride with",
-      exampleDriverData[currentDriverIndex].name
-    );
     setCurrentDriverIndex((currentDriverIndex + 1) % exampleDriverData.length);
   };
 

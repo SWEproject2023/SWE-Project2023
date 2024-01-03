@@ -19,16 +19,29 @@
     justify-Content: "center";
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 20px;
+    padding: 10px;
     background-color: white;
     max-width: 450px;
+    gap: 100px;
   }
   .imageStyle {
     border-radius: 50%;
     width: 100px;
     height: 100px;
   }
-  .datapart{
-
-
+  .map {
+    margin-top: 1em;
+    text-align: center;
+  }
+  .map p{
+    color: white;
+    font-size: 20px;
+  }
+  
+  .map img {
+    max-width: 450px;
+    height: auto;
+    display: inline-block;
+    border-radius: 8px; /* Add border-radius or other styles as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
   }
